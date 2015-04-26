@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Slick</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -19,6 +19,8 @@
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="slides.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -40,340 +42,634 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
+				<section data-background="img/slick_rick.jpg">
+					<h1 style="font-size:10em;font-weight:bolder;color:goldenrod;">SLICK</h1>
 					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						<p>
+							ScalaQuery, Slick 1, Slick 2
+						</p>
+						Agenda:
+						<ul>
+						<li>Not a regular tutorial</li>
+						<li>How to do things, so you can do things ;-)</li>
+						<li>experience report</li>
 					</aside>
 				</section>
 
 				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
 					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
+						Slick is a modern <span class="fragment highlight-current-red" data-fragment-index="1">database query and access library</span>
+						for Scala. It allows you to work with stored data almost as if you were
+						using Scala collections while at the same time giving you
+						full control over when a database access happens and which
+						data is transferred. You can write your database queries in
+						<span class="fragment highlight-current-red" data-fragment-index="1">Scala instead of SQL</span>, thus profiting from the
+						<span class="fragment highlight-current-red" data-fragment-index="1">static checking</span>,
+						<span class="fragment highlight-current-red" data-fragment-index="1">compile-time safety</span> and
+						<span class="fragment highlight-current-red" data-fragment-index="1">compositionality</span> of Scala. Slick features
+						an extensible query compiler which can generate code for different backends.
 					</p>
+					<aside class="notes">
+						Hard to know exactly what this means
+					</aside>
 				</section>
 
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
+				<section data-background="img/platoon.jpg">
+					<h1 style="color:red"><span class="pxb-1">NOT AN ORM</span></h1>
+					<aside class="notes">
+						The important thing! - its not an ORM
+						<ul>
+							<li>
+								relational databases are quite ok
+							</li>
+							<li>
+								mutable object graphs are not
+							</li>
+						</ul>
+					</aside>
 				</section>
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
+				<section data-background="img/fish_slap.gif">
+					<h1 style="color:red">Can still be annoying</h1>
+					<aside class="notes">
+						<p>
+							Its still a database library - they are all annoying!
+						</p>
+						<p>
+							Bridging two worlds always has friction
+						</p>
+
+					</aside>
 				</section>
 
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
+				<section data-background="img/fish_love.jpg">
+					<h1 style="color:pink">Can be quite lovely</h1>
+					<aside class="notes">
+						But unlike most, it can also be enjoyable
+					</aside>
 				</section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
+				<section data-background="img/sausage_factory.png">
+					<aside class="notes">
+						quick peek at the components
+					</aside>
 				</section>
+
+				<section data-background="img/sausage_factory.png">
+						<img src="img/sausage2.svg" class="stretch" style="background:#3F3F3F">
+						<aside class="notes">
+							<div>Lifted embedding - looks like collections</div>
+							<div>
+							Drivers for each database
+							</div>
+							<div>
+							Query compiler, because databases differ
+							</div>
+							<div>
+							Transaction api
+							</div>
+							<div>
+							Connection api
+							</div>
+						</aside>
+				</section>
+
+				<section data-background="img/coffee.jpg">
+					<h2>DDL</h2>
+					<pre>
+						<code data-trim class="sql">
+create table producer(
+    id bigserial primary key,
+    name text not null
+);
+
+create table coffee(
+    id bigserial primary key,
+    name text not null,
+    price double precision,
+    producer_id bigserial references producer
+);
+						</code>
+					</pre>
+					<aside class="notes">
+						Give you a taste of how slick looks
+					</aside>
+				</section>
+
+				<section data-background="img/coffee.jpg">
+					<h2>slick</h2>
+					<pre>
+						<code data-trim class="scala">
+class Coffee(tag: Tag) extends
+    Table[(Long, String, Double, Long)](tag, "coffee") {
+  def id         = column[Long]("id")
+  def name       = column[String]("name")
+  def price      = column[Option[Double]]("price")
+  def producerId = column[Long]("producer_id")
+  def *          = (id, name, price, producer_id)
+}
+val Coffee = TableQuery(tag => new Coffees(tag))
+
+class Producer(tag: Tag) extends
+    Table[(Long, String)](tag, "producer") {
+  def id         = column[Long]("id")
+  def name       = column[String]("name")
+  def *          = (id, name)
+}
+val Producer = TableQuery(tag => new Producer(tag))
+						</code>
+					</pre>
+					<aside class="notes">
+						Desribing the database schema
+					</aside>
+				</section>
+
+				<section data-background="img/coffee.jpg">
+					<h2>query</h2>
+					<pre>
+						<code data-trim class="sql">
+select producer.name, coffee.name, coffee.price
+from coffee, producer
+where coffee.producer_id = producer.id
+						</code>
+
+						<code data-trim class="scala">
+for {
+  c <- Coffee
+  p <- Producer
+  if c.producerId === p.id
+} yield (p.name, c.name, c.price)
+						</code>
+					</pre>
+					<aside class="notes">
+						<div>
+						easy to mix up identifiers
+						</div>
+						<div>
+							comparing longs isn't awesome
+						</div>
+
+					</aside>
+				</section>
+
+				<section data-background="img/coffee.jpg">
+					<h2>Foreign Keys</h2>
+					<pre>
+						<code data-trim class="scala">
+class Coffee(tag: Tag) extends
+    Table[(Long, String, Double, Long)](tag, "coffee") {
+    ...
+  def producerId = column[Long]("producer_id")
+
+  lazy val producerFk =
+    foreignKey("coffee_producer_id_fkey", producerId, Producer)(p => p.id)
+}
+						</code>
+
+						<code data-trim class="scala">
+for {
+  c <- Coffee
+  p <- c.producerFk
+} yield (p.name, c.name, c.price)
+						</code>
+					</pre>
+					<aside class="notes">
+						<div>
+						Model foreign keys explicitly
+						</div>
+						<div>
+						better typesafety
+							</div>
+					</aside>
+				</section>
+
+				<section data-background="img/coffee.jpg">
+					<h2>case classes</h2>
+					<pre>
+						<code data-trim class="scala">
+case class ProducerRow(id:Long, name:String)
+
+class Producer(tag: Tag) extends
+    Table[ProducerRow](tag, "producer") {
+
+  def id   = column[Long]("id")
+  def name = column[String]("name")
+  def *    = (id, name) <> (ProducerRow.tupled, ProducerRow.unapply)
+}
+						</code>
+					</pre>
+					<aside class="notes">
+						case classes has named attributes unlike tuples
+					</aside>
+				</section>
+
+				<section data-background="img/coffee.jpg">
+					<h2>typesafe ?</h2>
+					<pre>
+						<code data-trim class="scala">
+def get(id:Long):Option[ProducerRow] = ...
+						</code>
+						<code data-trim class="scala fragment">
+def get(id:ProducerId):Option[ProducerRow] = ...
+
+def get(id:CoffeeId):Option[ProducerRow] = ...
+						</code>
+					</pre>
+					<aside class="notes">
+						<div>
+							What does that long represent ?
+							ProducerId og CoffeeID
+						</div>
+						<div>
+							be MORE precise!
+						</div>
+						<div>
+							only as typesafe as its types allow them to be
+						</div>
+
+					</aside>
+				</section>
+
+				<section data-background="img/coffee.jpg">
+					<pre>
+						<code data-trim class="scala">
+implicit val MappedProducerId =
+    MappedColumnType.base[ProducerId, Long](_.id, ProducerId)
+
+implicit val MappedCoffeeId =
+    MappedColumnType.base[CoffeeId, Long](_.id, CoffeeId)
+
+class Coffee(tag: Tag) extends
+    Table[(CoffeeId, String, Double, ProducerId)](tag, "coffee") {
+  def id         = column[CoffeeId]("id")
+    ...
+  def producerId = column[ProducerId]("producer_id")
+  def *          = (id, name, price, producer_id)
+
+  lazy val producerFk =
+    foreignKey("coffee_producer_id_fkey", producerId, Producer)(r => r.id)
+}
+						</code>
+					</pre>
+					<aside class="notes">
+						<div>
+						exponential / invariant functor - xmap
+						</div>
+						<div>
+						column takes a column-type implicitly
+						</div>
+
+					</aside>
+				</section>
+
+				<section data-background="img/coffee.jpg">
+					<h2>typesafe !</h2>
+					<pre>
+						<code data-trim class="scala">
+def get(id:ProducerId):Option[ProducerRow] = db.withSession{ implicit s =>
+  Producer.filter(_.id === id).firstOption
+}
+
+def get(id:CoffeeId):Option[ProducerRow] = db.withSession{ implicit s =>
+  (for {
+    c <- Coffee
+    if c.id === id
+    p <- c.producerFk
+  } yield p).firstOption
+}
+						</code>
+					</pre>
+					<aside class="notes">
+						<div>
+						obvious impl judging from the types
+						</div>
+						<div>
+							reduced the need to depend on names
+						</div>
+					</aside>
+				</section>
+
+				<section data-background="img/er-big2.png">
+					<h2 class="fragment" style="color:red">Write mapping code</h2>
+					<h2 class="fragment" style="color:red">Refactor Database</h2>
+					<h2 class="fragment" style="color:red">Repeat</h2>
+
+					<h1 class="fragment" style="color:red">Hate Slick!</h1>
+					<aside class="notes">
+						<div>
+							Real world is more like this
+						</div>
+						<div>
+							keeping mapping code and schema in sync hard
+						</div>
+						<div>
+							no static guarantees from slick
+						</div>
+						<div>
+							slick can't drive ddl
+						</div>
+					</aside>
+				</section>
+
+				<section data-background="img/generators.jpg">
+					<h1 style="font-size:4em">Code Generator</h1>
+				</section>
+				<section data-background="img/generators.jpg">
+					<img src="img/koala.png">
+					<aside class="notes">
+						Sounds bad from 4GL and other madness
+					</aside>
+				</section>
+
+				<section data-background="img/generators.jpg">
+					<pre>
+						<code data-trim class="scala" style="font-size:1.1em">
+"com.typesafe.slick" %% "slick-codegen" % "2.1.0"
+
+scala.slick.codegen.SourceCodeGenerator.main(
+  Array(slickDriver, jdbcDriver, url, outputFolder, pkg))
+						</code>
+					</pre>
+					<aside class="notes">
+						<div>
+						reads the db-meta-model, generates code
+						</div>
+						<div>
+							derive slick from schema
+						</div>
+						<div>
+							typesafe, because on sync
+						</div>
+					</aside>
+				</section>
+
+				<section data-background="img/generators.jpg">
+					<h2>Customize</h2>
+					<pre>
+						<code data-trim class="scala" style="font-size: 90%">
+// https://www.parleys.com/tutorial/customizable-code-generation-other-slick-2-features
+
+val typemap = Map(
+	"coffee.id"          -> "coffee.CofeeId",
+  "coffee.provider_id" -> "coffee.ProviderId",
+  "provider.id"        -> "coffee.ProviderId")
+
+val generator = new SourceCodeGenerator(model){
+
+  override def parseType(tpe: String) =
+    Map("java.sql.Timestamp" -> "org.joda.time.DateTime").getOrElse(tpe, tpe)
+
+  override def Table = new Table(_){
+    override def Column = new Column(_){
+      override def rawType = typemap.getOrElse(
+        model.table.table+"."+model.name, super.rawType)
+    }
+  }
+}
+						</code>
+					</pre>
+					<aside class="notes">
+
+						Presentation by Christopher Vogt
+
+						<ul>
+							<li>
+								Insert returning generated PK
+							</li>
+							<li>
+								Insert row updated with generated PK
+							</li>
+							<li>
+								Idempotent inserts
+							</li>
+						</ul>
+						<div>
+						Don't over do it... Generators have a bad reputation for a reason!
+						</div>
+
+					</aside>
+				</section>
+
+				<section data-background="img/er-big2.png">
+					<h2 style="color:red"><strike>Write mapping code</strike></h2>
+					<h2 style="color:red">Refactor Database</h2>
+					<h2 style="color:red">Repeat</h2>
+				</section>
+
+				<section data-background="img/branches.jpg">
+					<img src="img/git.png" class="stretch" style="background:none; border:none; box-shadow:none">
+					<aside class="notes">
+						database needs to support development on multiple branches
+					</aside>
+				</section>
+
+				<section data-background="img/branches.jpg">
+					<img src="img/flyway.png" class="stretch" style="background:white">
+					<aside class="notes">
+						<div>
+							One forces you to write a ton of xml
+						</div>
+						<div>
+							The other is flyway, where you write sql and/or jdbc migrations
+						</div>
+					</aside>
+				</section>
+
+				<section data-background="img/branches.jpg">
+					<img src="img/sbt.png" class="stretch" style="background:none; border:none; box-shadow:none">
+					<aside class="notes">
+						Put it all together... other tools should also work well
+					</aside>
+				</section>
+
+				<section data-background="img/branches.jpg">
+					<pre>
+						<code data-trim class="scala">
+Db.dbName := "coffee_${Git.branch}"
+
+Flyway.flywayUrl <<= Db.dbUrl
+
+Slick.packageName := "coffe.db"
+
+Slick.typemap ++= Seq(
+	"coffee.id"          -> "coffee.CoffeeId",
+	"coffee.provider_id" -> "coffee.ProviderId",
+	"provider.id"        -> "coffee.ProviderId")
+
+Slick.generator <<= Slick.generator.dependsOn(Flyway.flywayMigrate)
+
+sourceGenerators in Compile <+= Slick.generator
+				</code>
+			</pre>
+					<aside class="notes">
+						* which database to connect to
+						* configuration of Slick code generator
+						* circular dependencies with flyway-plugin
+						* tricky to detect branch-name when rebasing
+					</aside>
+				</section>
+
+				<section data-background="img/er-big2.png">
+					<h2 style="color:red"><strike>Write mapping code</strike></h2>
+					<h2 style="color:red"><strike>Refactor Database</strike></h2>
+					<h2 style="color:red"><strike>Repeat</strike></h2>
+
+					<h1 class="fragment" style="color:red">♥ Slick!</h1>
+					<aside class="notes">
+						or less reason to hate
+					</aside>
+				</section>
+
+				<section data-background="img/query.jpg">
+
+				</section>
+
+				<section data-background="img/query.jpg">
+					<h2>compose queries</h2>
+					<pre>
+						<code data-trim class="scala">
+def coffees(producer:Query[Producer, ProducerRow, Seq]) =
+  for {
+    p <- Producer
+    c <- Coffee
+    if c.producerId === p.id
+  } yield c
+
+def all = coffees(Producer)
+
+def forProducer(p:ProducerId) =
+  coffees(Producer.filter(_.id === p))
+						</code>
+					</pre>
+					<aside class="notes">
+						Query composition is the unique feature in Slick!
+					</aside>
+				</section>
+
+				<section data-background="img/query.jpg">
+					<h2>participate in tx</h2>
+					<pre>
+						<code data-trim class="scala">
+def getCoffees(implicit s:Session) = Coffees.list
+
+def getProducers(implicit s:Session) = Producers.list
+
+def getCoffeesAndProducers(implicit s:Session) =
+	(getCoffees, getProducers)
+						</code>
+					</pre>
+					<aside class="notes">
+						Dislike threading a Session through, event with implicits
+						Slick 3 makes this a proper type
+					</aside>
+				</section>
+
+				<section data-background="img/query.jpg">
+					<h2>define tx</h2>
+					<pre>
+						<code data-trim class="scala">
+val database = Database.forDataSource(...)
+
+def coffeesAndProducers = db.withTransaction{ implicit s =>
+	getCoffeesAndProducers
+}
+						</code>
+					</pre>
+					<aside class="notes">
+						Slick 3 returns Futures, instead of blocking current thread
+					</aside>
+				</section>
+
+				<section data-background="img/testing.jpg">
+					<h2>Testing from the inside</h2>
+					<pre>
+						<code data-trim class="scala">
+trait SessionSuite extends fixture.Suite {
+  type FixtureParam = Session
+
+  private val database = Database.forDataSource(...)
+
+	protected def withFixture(test: OneArgTest) =
+		database.withTransaction{ s =>
+			try { test(s) } finally s.rollback()
+		}
+}
+
+class ProducerTest extends fixture.FunSuite with SessionSuite {
+	test("producer"){ implicit s =>
+		val names = Producer.map(_.name)
+		names.insert("Hello")
+		names.insert("World")
+		assert(names.list === List("Hello", "World"))
+	}
+}
+						</code>
+					</pre>
+				</section>
+
+				<section data-background="img/testing.jpg">
+					<h2>Testing from the outside</h2>
+					<pre>
+						<code data-trim class="scala">
+trait DbSuite extends fixture.Suite {
+  type FixtureParam = Database
+  private val database = Database.forDataSource(...)
+
+  protected def withFixture(test: OneArgTest) =
+		database.withTransaction{ s =>
+			object rollbackDb extends DatabaseDef {
+				def createConnection() = ???
+				override def withSession[T](f: Session => T) = f(s)
+				override def withTransaction[T](f: Session => T) = f(s)
+			}
+			try { test(rollbackDb) } finally s.rollback()
+		}
+}
+						</code>
+					</pre>
+				</section>
+
+				<section data-background="img/testing.jpg">
+					<h2>Testing from the outside</h2>
+					<pre>
+						<code data-trim class="scala">
+class Producers(db: Database) {
+  private val q = Producer.map(_.name)
+  def +=(name: String) = db.withSession { implicit s => q.insert(name) }
+  def names = db.withSession { implicit s => q.list }
+}
+
+class ProducersTest extends fixture.FunSuite with DbSuite {
+  test("producers.names"){ db =>
+    val p = new Producers(db)
+
+    p += "Hello"
+    p += "World"
+
+    assert(p.names === List("Hello", "World"))
+  }
+}
+						</code>
+					</pre>
+				</section>
+
+				<section data-background="img/escape_hatch.jpg">
+					<h2>Escape hatch</h2>
+					<pre>
+						<code data-trim class="scala">
+sql"select distinct(name) from coffee".as[String].list
+						</code>
+					</pre>
+				</section>
+
+				<section data-background="img/fin.jpg">
+				</section>
+
+				<section data-background="img/query.jpg">					
+				</section>
+
 
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
@@ -396,7 +692,11 @@ Reveal.addEventListener( 'customevent', function() {
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() {
+						hljs.initHighlightingOnLoad();
+						hljs.configure({tabReplace: '  '})
+						}
+					},
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
