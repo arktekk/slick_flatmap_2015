@@ -46,11 +46,14 @@
 					<h1 style="font-size:10em;font-weight:bolder;color:goldenrod;">SLICK</h1>
 					<aside class="notes">
 						<p>
+							presenter deg selv!
+						</p>
+						<p>
 							ScalaQuery, Slick 1, Slick 2
 						</p>
 						Agenda:
 						<ul>
-						<li>Not a regular tutorial</li>
+						<li>Survival guide</li>
 						<li>How to do things, so you can do things ;-)</li>
 						<li>experience report</li>
 					</aside>
@@ -134,7 +137,7 @@
 						</aside>
 				</section>
 
-				<section data-background="img/coffee.jpg">
+				<section data-background="img/coffee2.jpg">
 					<h2>DDL</h2>
 					<pre>
 						<code data-trim class="sql">
@@ -152,11 +155,11 @@ create table coffee(
 						</code>
 					</pre>
 					<aside class="notes">
-						Give you a taste of how slick looks
+						Schema - classic domain of coffee / producer
 					</aside>
 				</section>
 
-				<section data-background="img/coffee.jpg">
+				<section data-background="img/coffee2.jpg">
 					<h2>slick</h2>
 					<pre>
 						<code data-trim class="scala">
@@ -180,11 +183,14 @@ val Producer = TableQuery(tag => new Producer(tag))
 						</code>
 					</pre>
 					<aside class="notes">
-						Desribing the database schema
+						Represent the database schema in slick
+						<p>
+							* defines the entire row
+						</p>
 					</aside>
 				</section>
 
-				<section data-background="img/coffee.jpg">
+				<section data-background="img/coffee2.jpg">
 					<h2>query</h2>
 					<pre>
 						<code data-trim class="sql">
@@ -202,17 +208,19 @@ for {
 						</code>
 					</pre>
 					<aside class="notes">
-						<div>
-						easy to mix up identifiers
-						</div>
-						<div>
-							comparing longs isn't awesome
-						</div>
-
+						<p>
+							Looks like sql - upside down
+						</p>
+						<p>
+							map, flatMap, filter + more
+						</p>
+						<p>
+							following the FK-constraint
+						</p>
 					</aside>
 				</section>
 
-				<section data-background="img/coffee.jpg">
+				<section data-background="img/coffee2.jpg">
 					<h2>Foreign Keys</h2>
 					<pre>
 						<code data-trim class="scala">
@@ -240,10 +248,13 @@ for {
 						<div>
 						better typesafety
 							</div>
+							<div>
+								"nested collections" - matches mental model
+							</div>
 					</aside>
 				</section>
 
-				<section data-background="img/coffee.jpg">
+				<section data-background="img/coffee2.jpg">
 					<h2>case classes</h2>
 					<pre>
 						<code data-trim class="scala">
@@ -263,7 +274,7 @@ class Producer(tag: Tag) extends
 					</aside>
 				</section>
 
-				<section data-background="img/coffee.jpg">
+				<section data-background="img/coffee2.jpg">
 					<h2>typesafe ?</h2>
 					<pre>
 						<code data-trim class="scala">
@@ -278,7 +289,7 @@ def get(id:CoffeeId):Option[ProducerRow] = ...
 					<aside class="notes">
 						<div>
 							What does that long represent ?
-							ProducerId og CoffeeID
+							ProducerId and CoffeeID
 						</div>
 						<div>
 							be MORE precise!
@@ -286,11 +297,10 @@ def get(id:CoffeeId):Option[ProducerRow] = ...
 						<div>
 							only as typesafe as its types allow them to be
 						</div>
-
 					</aside>
 				</section>
 
-				<section data-background="img/coffee.jpg">
+				<section data-background="img/coffee2.jpg">
 					<pre>
 						<code data-trim class="scala">
 implicit val MappedProducerId =
@@ -318,11 +328,10 @@ class Coffee(tag: Tag) extends
 						<div>
 						column takes a column-type implicitly
 						</div>
-
 					</aside>
 				</section>
 
-				<section data-background="img/coffee.jpg">
+				<section data-background="img/coffee2.jpg">
 					<h2>typesafe !</h2>
 					<pre>
 						<code data-trim class="scala">
@@ -398,7 +407,7 @@ scala.slick.codegen.SourceCodeGenerator.main(
 							derive slick from schema
 						</div>
 						<div>
-							typesafe, because on sync
+							typesafe -> code in sync with schema
 						</div>
 					</aside>
 				</section>
@@ -459,7 +468,7 @@ val generator = new SourceCodeGenerator(model){
 				<section data-background="img/branches.jpg">
 					<img src="img/git.png" class="stretch" style="background:none; border:none; box-shadow:none">
 					<aside class="notes">
-						database needs to support development on multiple branches
+						needs to support development on multiple branches
 					</aside>
 				</section>
 
@@ -489,7 +498,7 @@ Db.dbName := "coffee_${Git.branch}"
 
 Flyway.flywayUrl <<= Db.dbUrl
 
-Slick.packageName := "coffe.db"
+Slick.packageName := "coffee.db"
 
 Slick.typemap ++= Seq(
 	"coffee.id"          -> "coffee.CoffeeId",
@@ -502,10 +511,20 @@ sourceGenerators in Compile <+= Slick.generator
 				</code>
 			</pre>
 					<aside class="notes">
-						* which database to connect to
-						* configuration of Slick code generator
-						* circular dependencies with flyway-plugin
-						* tricky to detect branch-name when rebasing
+						<ul>
+							<li>
+								which database to connect to
+							</li>
+							<li>
+								configuration of Slick code generator
+							</li>
+							<li>
+								circular dependencies with flyway-plugin
+							</li>
+							<li>
+								tricky to detect branch-name when rebasing
+							</li>
+						</ul>
 					</aside>
 				</section>
 
@@ -516,15 +535,11 @@ sourceGenerators in Compile <+= Slick.generator
 
 					<h1 class="fragment" style="color:red">♥ Slick!</h1>
 					<aside class="notes">
-						or less reason to hate
+						or less reason to hate..
 					</aside>
 				</section>
 
-				<section data-background="img/query.jpg">
-
-				</section>
-
-				<section data-background="img/query.jpg">
+				<section data-background="img/miles.jpg">
 					<h2>compose queries</h2>
 					<pre>
 						<code data-trim class="scala">
@@ -542,11 +557,16 @@ def forProducer(p:ProducerId) =
 						</code>
 					</pre>
 					<aside class="notes">
+						<p>
 						Query composition is the unique feature in Slick!
+						</p>
+						<p>
+							Its all a Query producing a type
+						</p>
 					</aside>
 				</section>
 
-				<section data-background="img/query.jpg">
+				<section data-background="img/miles.jpg">
 					<h2>participate in tx</h2>
 					<pre>
 						<code data-trim class="scala">
@@ -564,7 +584,7 @@ def getCoffeesAndProducers(implicit s:Session) =
 					</aside>
 				</section>
 
-				<section data-background="img/query.jpg">
+				<section data-background="img/miles.jpg">
 					<h2>define tx</h2>
 					<pre>
 						<code data-trim class="scala">
@@ -605,6 +625,14 @@ class ProducerTest extends fixture.FunSuite with SessionSuite {
 }
 						</code>
 					</pre>
+					<aside class="notes">
+						<p>
+						Using scala-test. auto-rollback transaction
+						</p>
+						<p>
+							Never change environment! allows running tests in parallell
+						</p>
+					</aside>
 				</section>
 
 				<section data-background="img/testing.jpg">
@@ -627,6 +655,9 @@ trait DbSuite extends fixture.Suite {
 }
 						</code>
 					</pre>
+					<aside class="notes">
+						all transactions are the same. rollback at end
+					</aside>
 				</section>
 
 				<section data-background="img/testing.jpg">
@@ -660,15 +691,21 @@ class ProducersTest extends fixture.FunSuite with DbSuite {
 sql"select distinct(name) from coffee".as[String].list
 						</code>
 					</pre>
+					<aside class="notes">
+						<p>
+							slick doesn't support everything
+						</p>
+						<p>
+							no shame in writing sql - its awesome!
+						</p>
+					</aside>
 				</section>
 
 				<section data-background="img/fin.jpg">
 				</section>
 
-				<section data-background="img/query.jpg">					
+				<section data-background="img/query.jpg">
 				</section>
-
-
 			</div>
 		</div>
 
@@ -680,7 +717,7 @@ sql"select distinct(name) from coffee".as[String].list
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 				center: true,
